@@ -18,17 +18,16 @@
     totalRevenueChartOptions = {
       series: [
         {
-          name: '2021',
-          data: [18, 7, 15, 29, 18, 12, 9]
+          name: '2022',
+          data: [68, 60, 63, 74, 80, 72, 95, 120, 129, 135, 131, 170]
         },
         {
-          name: '2020',
-          data: [-13, -18, -9, -14, -5, -17, -15]
+          name: '2023',
+          data: [184, 175, 120, 106, 178, 0, 0, 0, 0, 0, 0, 0]
         }
       ],
       chart: {
-        height: 300,
-        stacked: true,
+        height: 200,
         type: 'bar',
         toolbar: { show: false }
       },
@@ -47,7 +46,7 @@
       },
       stroke: {
         curve: 'smooth',
-        width: 6,
+        // width: 6,
         lineCap: 'round',
         colors: [cardColor]
       },
@@ -78,10 +77,10 @@
         }
       },
       xaxis: {
-        categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul'],
+        categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
         labels: {
           style: {
-            fontSize: '13px',
+            fontSize: '12px',
             colors: axisColor
           }
         },
@@ -95,7 +94,7 @@
       yaxis: {
         labels: {
           style: {
-            fontSize: '13px',
+            fontSize: '12px',
             colors: axisColor
           }
         }
@@ -278,10 +277,10 @@
   // --------------------------------------------------------------------
   const growthChartEl = document.querySelector('#growthChart'),
     growthChartOptions = {
-      series: [78],
-      labels: ['Growth'],
+      series: [68],
+      labels: ['April-May'],
       chart: {
-        height: 240,
+        height: 200,
         type: 'radialBar'
       },
       plotOptions: {
@@ -355,69 +354,6 @@
     growthChart.render();
   }
 
-  // Profit Report Line Chart
-  // --------------------------------------------------------------------
-  const profileReportChartEl = document.querySelector('#profileReportChart'),
-    profileReportChartConfig = {
-      chart: {
-        height: 80,
-        // width: 175,
-        type: 'line',
-        toolbar: {
-          show: false
-        },
-        dropShadow: {
-          enabled: true,
-          top: 10,
-          left: 5,
-          blur: 3,
-          color: config.colors.warning,
-          opacity: 0.15
-        },
-        sparkline: {
-          enabled: true
-        }
-      },
-      grid: {
-        show: false,
-        padding: {
-          right: 8
-        }
-      },
-      colors: [config.colors.warning],
-      dataLabels: {
-        enabled: false
-      },
-      stroke: {
-        width: 5,
-        curve: 'smooth'
-      },
-      series: [
-        {
-          data: [110, 270, 145, 245, 205, 285]
-        }
-      ],
-      xaxis: {
-        show: false,
-        lines: {
-          show: false
-        },
-        labels: {
-          show: false
-        },
-        axisBorder: {
-          show: false
-        }
-      },
-      yaxis: {
-        show: false
-      }
-    };
-  if (typeof profileReportChartEl !== undefined && profileReportChartEl !== null) {
-    const profileReportChart = new ApexCharts(profileReportChartEl, profileReportChartConfig);
-    profileReportChart.render();
-  }
-
   // Order Statistics Chart
   // --------------------------------------------------------------------
   const chartOrderStatistics = document.querySelector('#orderStatisticsChart'),
@@ -427,8 +363,8 @@
         width: 130,
         type: 'donut'
       },
-      labels: ['Electronic', 'Sports', 'Decor', 'Fashion'],
-      series: [85, 15, 50, 50],
+      labels: ['Clothes', 'Shoes', 'Bag', 'Other'],
+      series: [452, 101, 45, 165],
       colors: [config.colors.primary, config.colors.secondary, config.colors.info, config.colors.success],
       stroke: {
         width: 5,
@@ -494,7 +430,8 @@
     incomeChartConfig = {
       series: [
         {
-          data: [24, 21, 30, 22, 42, 26, 35, 29]
+          name: [2023],
+          data: [24, 24, 21, 30, 22, 42]
         }
       ],
       chart: {
@@ -558,7 +495,7 @@
         }
       },
       xaxis: {
-        categories: ['', 'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul'],
+        categories: ['', 'Jan', 'Feb', 'Mar', 'Apr', 'May'],
         axisBorder: {
           show: false
         },
@@ -591,7 +528,8 @@
   // --------------------------------------------------------------------
   const weeklyExpensesEl = document.querySelector('#expensesOfWeek'),
     weeklyExpensesConfig = {
-      series: [65],
+      label: [''],
+      series: [60],
       chart: {
         width: 60,
         height: 60,
