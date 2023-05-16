@@ -36,6 +36,7 @@
     <link rel="stylesheet" href="../assets/vendor/css/core.css" class="template-customizer-core-css" />
     <link rel="stylesheet" href="../assets/vendor/css/theme-default.css" class="template-customizer-theme-css" />
     <link rel="stylesheet" href="../assets/css/demo.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
 
     <!-- Vendors CSS -->
     <link rel="stylesheet" href="../assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css" />
@@ -114,7 +115,7 @@
   
           <ul class="menu-inner py-1">
             <!-- Dashboard -->
-            <li class="menu-item active">
+            <li class="menu-item">
               <a href="dashboard.html" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-home-circle"></i>
                 <div data-i18n="Analytics">Dashboard</div>
@@ -146,7 +147,7 @@
             <!-- Forms & Tables -->
             <li class="menu-header small text-uppercase"><span class="menu-header-text">Data</span></li>
             <!-- Forms -->
-            <li class="menu-item">
+            <li class="menu-item active">
               <a href="javascript:void(0);" class="menu-link menu-toggle">
                 <i class="menu-icon tf-icons bx bx-detail"></i>
                 <div data-i18n="Form Layouts">Product</div>
@@ -162,24 +163,37 @@
                     <div data-i18n="Horizontal Form">Input/Update Product</div>
                   </a>
                 </li>
+              </ul>
+            </li>
+            <li class="menu-item">
+              <a href="javascript:void(0);" class="menu-link menu-toggle">
+                <i class="menu-icon tf-icons bx bx-detail"></i>
+                <div data-i18n="Form Layouts">Transactions</div>
+              </a>
+              <ul class="menu-sub">
                 <li class="menu-item">
-                  <a href="productstock.html" class="menu-link">
-                    <div data-i18n="Horizontal Form">Product Stock</div>
+                  <a href="transactions.html" class="menu-link">
+                    <div data-i18n="Vertical Form">Transaction Header</div>
+                  </a>
+                </li>
+                <li class="menu-item">
+                  <a href="transactiondetail.html" class="menu-link">
+                    <div data-i18n="Horizontal Form">Transaction Detail</div>
                   </a>
                 </li>
               </ul>
             </li>
             <li class="menu-item">
-              <a href="transactions.html" class="menu-link">
+              <a href="javascript:void(0);" class="menu-link menu-toggle">
                 <i class="menu-icon tf-icons bx bx-detail"></i>
-                <div data-i18n="Tables">Transactions</div>
+                <div data-i18n="Form Layouts">Customer</div>
               </a>
-            </li>
-            <li class="menu-item">
-              <a href="customer.html" class="menu-link">
-                <i class="menu-icon tf-icons bx bx-detail"></i>
-                <div data-i18n="Tables">Customer</div>
-              </a>
+              <ul class="menu-sub">
+                <li class="menu-item">
+                  <a href="customer.html" class="menu-link">
+                    <div data-i18n="Vertical Form">Input/Update Customer</div>
+                  </a>
+                </li>
             </li>
           </ul>
         </aside>
@@ -199,15 +213,7 @@
             </div>
   
             <div class="navbar-nav-right d-flex align-items-center" id="navbar-collapse">
-              <!-- Search -->
-              <div class="navbar-nav align-items-center">
-                <div class="nav-item d-flex align-items-center">
-                  <i class="bx bx-search fs-4 lh-0"></i>
-                  <input type="text" class="form-control border-0 shadow-none" placeholder="Search..."
-                    aria-label="Search..." />
-                </div>
-              </div>
-              <!-- /Search -->
+              Product/<b>Product Master</b>
   
               <ul class="navbar-nav flex-row align-items-center ms-auto">
                 <!-- User -->
@@ -259,9 +265,117 @@
             </div>
           </nav>  
 
-          <!-- / Content -->
 
-         
+          <!-- Content -->
+
+          
+          <div class="container-xxl flex-grow-1 container-p-y">
+            <div class="row">
+              
+              <div class="col-lg-12 mb-4 order-0">
+                <div class="card">
+                  <div class="row align-items-center justify-content-en p-2 px-4">
+                    <div class="col-4 px-0">
+                      <input type="text" class="form-control shadow-none" placeholder="Search this table..." aria-label="Search this table...">
+                    </div>
+                    <div class="col-1 text-end">
+                      Rows
+                    </div>
+                    <div class="col-1 px-0">
+                      <select name="num-of-rows" class="form-select shadow-none">
+                        <option value="10">10</option>
+                        <option value="25">25</option>
+                        <option value="50">50</option>
+                        <option value="100">100</option>
+                        <option value="all-row">All</option>
+                      </select>
+                    </div>  
+                    <div class="col-1 text-end">
+                      Category
+                    </div>
+                    <div class="col-1 px-0">
+                      <select name="category" class="form-select shadow-none">
+                        <option value="all-category">All</option>
+                        <option value="jacket">Jacket</option>
+                        <option value="tshirt">TShirt</option>
+                      </select>
+                    </div> 
+                    <div class="col-1 text-end">
+                        Sort By
+                    </div>
+                    <div class="col-1 px-0">
+                      <select name="Sort" class="form-select shadow-none">
+                        <option value="id">ID</option>
+                        <option value="name">Name</option>
+                        <option value="price">Price</option>
+                      </select>
+                    </div>
+                    <div class="col-1 text-end">
+                      Page
+                    </div>
+                    <div class="col-1 px-0">
+                      <select name="num-of-page" class="form-select shadow-none">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-lg-12 mb-4 order-0">
+                <div class="card">
+                  <div class="row justify-content-center align-items-center p-4">
+                    <div class="table-responsive">
+                      <table class="table table-hover table-bordered">
+                        <thead>
+                          <tr>
+                            <th scope="col" style="width: 12%;">ID</th>
+                            <th scope="col" style="width: 16%;">NAME</th>
+                            <th scope="col" style="width: 16%;">DESC</th>
+                            <th scope="col" style="width: 12%;">CATEGORY</th>
+                            <th scope="col" style="width: 12%;">STATUS</th>
+                            <th scope="col" style="width: 12%;">PRICE</th>
+                            <th scope="col" style="width: 12%;">STOCK</th>
+                            <th scope="col" style="width: 8%;"></th>
+                          </tr>
+                          <tbody>
+                            <tr>
+                              <th scope="row">P-001</th>
+                              <td>Basic White T-Shirt</td>
+                              <td>A classic white t-s...</td>
+                              <td>T-Shirt</td>
+                              <td>Available</td>
+                              <td class="text-end">100.000</td>
+                              <td class="text-end">50</td>
+                              <td scope="col" style="padding: 15px 0px; text-align: center;">
+                                <a href="productupdate.html" onclick=""><i class="bi bi-pencil-square px-2"></i></a>
+                                <a href="" onclick=""><i class="bi bi-trash text-danger px-2"></i></a>
+                              </td>
+                            </tr>
+                            <tr>
+                              <th scope="row">P-002</th>
+                              <td>Black Hoodie</td>
+                              <td>A black hoodie wi...</td>
+                              <td>Hoodie</td>
+                              <td>Available</td>
+                              <td class="text-end">250.000</td>
+                              <td class="text-end">30</td>
+                              <td scope="col" style="padding: 15px 0px; text-align: center;">
+                                <a href="" onclick=""><i class="bi bi-pencil-square px-2"></i></a>
+                                <a href="" onclick=""><i class="bi bi-trash text-danger px-2"></i></a>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </thead>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
           <!-- / Content -->
 
           <!-- Footer -->
